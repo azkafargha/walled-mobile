@@ -1,36 +1,46 @@
 import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  Image,
-} from "react-native";
-import HelloWorld from "./components/HelloWorld";
-import Button from "./components/Button";
-import Input from "./components/Input";
+import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import Button from "../components/Button";
+import Input from "../components/Input";
+import { Link } from "expo-router";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image source={require("./assets/logo-perindo.png")} style={styles.logo} />
+      <Image source={require("../assets/logo.png")} style={styles.logo} />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Nama Lengkap"
+        placeholderTextColor="#aaa"
+        
+      />
+
       <TextInput
         style={styles.input}
         placeholder="Email"
         placeholderTextColor="#aaa"
         keyboardType="email-address"
+        
       />
-
       <TextInput
         style={styles.input}
         placeholder="Password"
         placeholderTextColor="#aaa"
         secureTextEntry={true}
       />
+      <TextInput
+        style={styles.input}
+        placeholder="Avatar URL"
+        placeholderTextColor="#aaa"
+        secureTextEntry={true}
+      />
 
-      <Input/>
-      <Button text="Login"/>
+      
+
+      <Button text="Login" />
+      
+      
 
       <StatusBar style="auto" />
     </View>
@@ -46,8 +56,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: 150,
-    height: 100,
+    // width: 150,
+    // height: 100,
     marginBottom: 30,
   },
   title: {

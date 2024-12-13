@@ -1,20 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  Image,
-} from "react-native";
-import HelloWorld from "./components/HelloWorld";
-import Button from "./components/Button";
-import Input from "./components/Input";
+import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import Button from "../components/Button";
+import Input from "../components/Input";
+import { Link } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 
 export default function App() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Image source={require("./assets/logo-perindo.png")} style={styles.logo} />
+      <Image source={require("../assets/logo.png")} style={styles.logo} />
+
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -29,8 +25,16 @@ export default function App() {
         secureTextEntry={true}
       />
 
-      <Input/>
-      <Button text="Login"/>
+      <Input text="Notes" />
+
+      <Button onPress={() => navigation.navigate('(home)')} text="Login" />
+
+      <Text style={styles.text}>
+        Don't have an account?{" "}
+        <Link style={styles.regist} href="/register">
+          Register here
+        </Link>
+      </Text>
 
       <StatusBar style="auto" />
     </View>
@@ -38,6 +42,13 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  regist: {
+    color: "#2fbf77",
+  },
+  text: {
+    padding: 20,
+    textAlign: "left",
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -46,8 +57,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: 150,
-    height: 100,
+    // width: 150,
+    // height: 100,
     marginBottom: 30,
   },
   title: {
