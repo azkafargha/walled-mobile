@@ -18,14 +18,14 @@ export default function TabLayout() {
         name="transfer"
         options={{
           title: 'Transfer',
-          tabBarIcon: ({ color }) => <FontAwesome6 name="money-bill-transfer" size={24} color="black" />,
+          tabBarIcon: ({ color }) => <FontAwesome6 name="money-bill-transfer" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="topup"
         options={{
           title: 'Top Up',
-          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="credit-card-plus" size={24} color="black" />,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="credit-card-plus" size={24} color={color} />,
         }}
       />
     </Tabs>

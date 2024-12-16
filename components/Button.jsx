@@ -1,17 +1,22 @@
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, onPress } from "react-native";
 
-
-function Button({ bgColor = "#19918F", text, onPress }) {
+function Button({
+  bgColor = "#199119",
+  text,
+  handlePress = () => {},
+}) {
   return (
-    <TouchableOpacity style={{ ...styles.button, backgroundColor: bgColor}} onPress = {onPress}>
-        <Text style={styles.buttonText}>{text}</Text>
+    <TouchableOpacity
+      style={{ ...styles.button, backgroundColor: bgColor }}
+      onPress={onPress || handlePress}
+    >
+      <Text style={styles.buttonText}>{text}</Text>
     </TouchableOpacity>
   );
 }
 const styles = StyleSheet.create({
-
   button: {
-    backgroundColor: "#4DB6AC",
+    backgroundColor: "#22c627",
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 15,
