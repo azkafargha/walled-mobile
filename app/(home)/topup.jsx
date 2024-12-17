@@ -1,17 +1,18 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from "react-native";
+import Input from "../../components/Input";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Topup() {
+export default function TopUp() {
   return (
-    <View style={styles.container}>
-      <Text>Ini Top Up</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <Input></Input>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#fff",
   },
 });

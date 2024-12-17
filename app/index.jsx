@@ -39,10 +39,7 @@ export default function App() {
   const handleSubmit = async () => {
     try {
       LoginSchema.parse(form);
-      const res = await axios.post(
-        "http://192.168.30.38:8080/auth/login",
-        form
-      );
+      const res = await axios.post("http://172.20.10.3:8080/auth/login", form);
 
       const token = res.data.data.token;
       console.log("Login berhasil:", token);
